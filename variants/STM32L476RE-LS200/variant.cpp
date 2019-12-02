@@ -98,12 +98,12 @@ extern const PinDescription g_APinDescription[NUM_TOTAL_PINS] =
     { GPIOA, GPIO_PIN_MASK(GPIO_PIN_PA1),  GPIO_PIN_PA1_TIM5_CH2,   (PIN_ATTR_ADC | PIN_ATTR_PWM | PIN_ATTR_EXTI),                  PWM_INSTANCE_TIM5,  PWM_CHANNEL_2,    ADC_INPUT_6    },
 
     // 32..37 QSPI pins (NCS,CK,IO0,IO1,IO2,IO3)
-    { NULL,  GPIO_PIN_MASK(GPIO_PIN_PB11), GPIO_PIN_PB11,           0,                                                              PWM_INSTANCE_NONE,  PWM_CHANNEL_NONE, ADC_INPUT_NONE },
+    { GPIOB,  GPIO_PIN_MASK(GPIO_PIN_PB11), GPIO_PIN_PB11,           0,                                                              PWM_INSTANCE_NONE,  PWM_CHANNEL_NONE, ADC_INPUT_NONE },
     { NULL,  GPIO_PIN_MASK(GPIO_PIN_PB10), GPIO_PIN_PB10,           0,                                                              PWM_INSTANCE_NONE,  PWM_CHANNEL_NONE, ADC_INPUT_NONE },
     { NULL,  GPIO_PIN_MASK(GPIO_PIN_PB1),  GPIO_PIN_PB1,            0,                                                              PWM_INSTANCE_NONE,  PWM_CHANNEL_NONE, ADC_INPUT_NONE },
     { NULL,  GPIO_PIN_MASK(GPIO_PIN_PB0),  GPIO_PIN_PB0,            0,                                                              PWM_INSTANCE_NONE,  PWM_CHANNEL_NONE, ADC_INPUT_NONE },
     { NULL,  GPIO_PIN_MASK(GPIO_PIN_PA7),  GPIO_PIN_PA7,            0,                                                              PWM_INSTANCE_NONE,  PWM_CHANNEL_NONE, ADC_INPUT_NONE },
-    { NULL,  GPIO_PIN_MASK(GPIO_PIN_PA6),  GPIO_PIN_PA6,            0,                                                              PWM_INSTANCE_NONE,  PWM_CHANNEL_NONE, ADC_INPUT_NONE },
+    { GPIOA,  GPIO_PIN_MASK(GPIO_PIN_PA6),  GPIO_PIN_PA6,            0,                                                              PWM_INSTANCE_NONE,  PWM_CHANNEL_NONE, ADC_INPUT_NONE },
 
     // 38..40 - Digital pins (ATN,39,40)
     { GPIOA, GPIO_PIN_MASK(GPIO_PIN_PA8),  GPIO_PIN_PA8,            (PIN_ATTR_EXTI),                                                PWM_INSTANCE_NONE,  PWM_CHANNEL_NONE, ADC_INPUT_NONE },
