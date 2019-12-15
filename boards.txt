@@ -54,8 +54,8 @@ Lacuna-LS200.menu.region_flags.US915=US 915
 Lacuna-LS200.menu.region_flags.US915.build.region=R_US915
 Lacuna-LS200.menu.region_flags.AS923=Asia AS923
 Lacuna-LS200.menu.region_flags.AS923.build.region=R_AS923
-# Lacuna-LS200.menu.region_flags.IN865=India 865
-# Lacuna-LS200.menu.region_flags.IN865.build.region=R_IN865
+Lacuna-LS200.menu.region_flags.IN865=India 865
+Lacuna-LS200.menu.region_flags.IN865.build.region=R_IN865
 
 Lacuna-LS200.menu.dosfs.none.build.dosfs_sdcard=0
 Lacuna-LS200.menu.dosfs.none.build.dosfs_sflash=0
