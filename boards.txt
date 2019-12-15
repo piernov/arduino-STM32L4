@@ -49,13 +49,13 @@ Lacuna-LS200.menu.usb.none=No USB (low-power)
 Lacuna-LS200.menu.usb.none.build.usb_type=USB_TYPE_NONE
 
 Lacuna-LS200.menu.region_flags.EU868=Europe 868
-Lacuna-LS200.menu.region_flags.EU868.build.region=EU868
+Lacuna-LS200.menu.region_flags.EU868.build.region=R_EU868
 Lacuna-LS200.menu.region_flags.US915=US 915
-Lacuna-LS200.menu.region_flags.US915.build.region=US915
+Lacuna-LS200.menu.region_flags.US915.build.region=R_US915
 Lacuna-LS200.menu.region_flags.AS923=Asia AS923
-Lacuna-LS200.menu.region_flags.AS923.build.region=AS923
+Lacuna-LS200.menu.region_flags.AS923.build.region=R_AS923
 # Lacuna-LS200.menu.region_flags.IN865=India 865
-# Lacuna-LS200.menu.region_flags.IN865.build.region=IN865
+# Lacuna-LS200.menu.region_flags.IN865.build.region=R_IN865
 
 Lacuna-LS200.menu.dosfs.none.build.dosfs_sdcard=0
 Lacuna-LS200.menu.dosfs.none.build.dosfs_sflash=0
