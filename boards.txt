@@ -1,5 +1,6 @@
 menu.usb=USB Type
 menu.region_flags=Region
+menu.version_flags=Board version
 menu.dosfs=DOSFS
 menu.speed=CPU Speed
 menu.opt=Optimize
@@ -30,7 +31,7 @@ Lacuna-LS200.build.pid=0x6667
 Lacuna-LS200.build.did=0xffff
 Lacuna-LS200.build.usb_manufacturer="Lacuna Space"
 Lacuna-LS200.build.usb_product="LS200"
-Lacuna-LS200.build.extra_flags=-DSTM32L476xx -D__FPU_PRESENT=1 -march=armv7e-m -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -mabi=aapcs -mslow-flash-data -fsingle-precision-constant {build.usb_flags} {build.dosfs_flags} {build.region_flags}
+Lacuna-LS200.build.extra_flags=-DSTM32L476xx -D__FPU_PRESENT=1 -march=armv7e-m -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -mabi=aapcs -mslow-flash-data -fsingle-precision-constant {build.usb_flags} {build.dosfs_flags} {build.region_flags} {build.version_flags}
 Lacuna-LS200.build.ldscript=linker_scripts/STM32L476RE_FLASH.ld
 Lacuna-LS200.build.openocdscript=openocd_scripts/stm32l476re_dragonfly.cfg
 Lacuna-LS200.build.variant=STM32L476RE-LS200
@@ -56,6 +57,11 @@ Lacuna-LS200.menu.region_flags.AS923=Asia AS923
 Lacuna-LS200.menu.region_flags.AS923.build.region=R_AS923
 Lacuna-LS200.menu.region_flags.IN865=India 865
 Lacuna-LS200.menu.region_flags.IN865.build.region=R_IN865
+
+Lacuna-LS200.menu.version_flags.V3=V3
+Lacuna-LS200.menu.version_flags.V3.build.version=BOARD_LS200_V3
+Lacuna-LS200.menu.version_flags.V2=V2
+Lacuna-LS200.menu.version_flags.V2.build.version=BOARD_LS200_V2
 
 Lacuna-LS200.menu.dosfs.none.build.dosfs_sdcard=0
 Lacuna-LS200.menu.dosfs.none.build.dosfs_sflash=0

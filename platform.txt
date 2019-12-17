@@ -75,6 +75,10 @@ build.dosfs_flags=-DDOSFS_SDCARD={build.dosfs_sdcard} -DDOSFS_SFLASH={build.dosf
 # ---------
 build.region_flags=-DREGION={build.region}
 
+# Version Flags
+# ---------
+build.version_flags=-DBOARD_VERSION={build.version}
+
 # Compile patterns
 # ----------------
 

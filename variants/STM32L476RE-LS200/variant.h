@@ -119,6 +119,55 @@ static const uint8_t ATN = PIN_ATN;
 #define PIN_BUTTON           (0l)
 static const uint8_t BUTTON = PIN_BUTTON;
 
+#define BOARD_LS200_V2 (0x02)
+#define BOARD_LS200_V3 (0x03)
+
+#if BOARD_VERSION == BOARD_LS200_V2
+  #define BME280_WIRE Wire2
+  #define LSM303_WIRE Wire1
+#else 
+  #define BME280_WIRE Wire
+  #define LSM303_WIRE Wire
+#endif
+
+// LS200 BOARD
+#define BOARD_LS200
+
+// LS200 pins
+#define LS_USER_BUTTON 0
+#define LS_LED_BLUE 7
+#define LS_LED 7
+
+#define LS_GROVE_J5_PIN_4 3
+#define LS_GROVE_J5_PIN_3 4
+
+#define LS_GROVE_ADC1 17
+#define LS_GROVE_DAC1 15
+#define LS_GROVE_J3_PIN_4 15
+#define LS_GROVE_J3_PIN_3 17
+
+#define LS_BATVOLT_PIN 16
+#define LS_VERSION_MEAS 18
+#define LS_VERSION_ENABLE 40
+
+#define LS_GPS_PPS 6
+#define LS_GPS_RX 30
+#define LS_GPS_TX 31
+#define LS_GPS_ENABLE 32
+#define LS_GPS_INT 33
+#define LS_GPS_V_BCKP 37
+
+#define LS_INT_MAG 25 
+#define LS_LSM303_DRDY 25
+#define LS_INT_ACC_2 34
+#define LS_INT_ACC_1 35
+
+#define E22_RXEN 1
+#define E22_BUSY 2
+#define E22_NSS 10
+#define E22_NRST 14
+#define E22_DIO1 39
+
 /*
  * Serial interfaces
  */
