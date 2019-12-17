@@ -133,6 +133,11 @@ static const uint8_t BUTTON = PIN_BUTTON;
 // LS200 BOARD
 #define BOARD_LS200
 
+// LS200 battery
+#define LS_ADC_AREF 3.0f
+#define LS_BATVOLT_R1 1.0f 
+#define LS_BATVOLT_R2 2.0f
+
 // LS200 pins
 #define LS_USER_BUTTON 0
 #define LS_LED_BLUE 7
