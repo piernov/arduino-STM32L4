@@ -45,6 +45,8 @@ compiler.elf2hex.hex.flags=-O ihex
 compiler.elf2hex.cmd=arm-none-eabi-objcopy
 compiler.suffix.cmd=dfu-suffix
 compiler.suffix.cmd.windows=dfu-suffix.exe
+compiler.suffix.slash=/
+compiler.suffix.slash.windows=\
 compiler.ldflags=-mcpu={build.mcu} -mthumb -Wl,--cref -Wl,--check-sections -Wl,--gc-sections -Wl,--unresolved-symbols=report-all -Wl,--warn-common -Wl,--warn-section-align
 compiler.size.cmd=arm-none-eabi-size
 compiler.define=-DARDUINO=
@@ -106,7 +108,7 @@ recipe.objcopy.dfu.pattern="{compiler.path}{compiler.elf2hex.cmd}" {compiler.elf
 recipe.objcopy.iap.pattern="{compiler.path}{compiler.elf2hex.cmd}" {compiler.elf2hex.bin.flags} {compiler.elf2hex.extra_flags} -R .boot "{build.path}/{build.project_name}.elf" "{build.path}/{build.project_name}.iap"
 
 ## Append DFU suffix (dfu file)
-recipe.hooks.objcopy.postobjcopy.1.pattern="{compiler.platform.path}/{compiler.suffix.cmd}"  -v "{build.vid}" -p "{build.pid}" -d "{build.did}" -a "{build.path}/{build.project_name}.dfu"
+recipe.hooks.objcopy.postobjcopy.1.pattern="{compiler.platform.path}/{compiler.suffix.cmd}"  -v "{build.vid}" -p "{build.pid}" -d "{build.did}" -a "{build.path}{compiler.suffix.slash}{build.project_name}.dfu"
 
 ## Append DFU suffix (iap file)
 recipe.hooks.objcopy.postobjcopy.2.pattern="{compiler.platform.path}/{compiler.suffix.cmd}"  -v "{build.vid}" -p "{build.pid}" -d "{build.did}" -a "{build.path}/{build.project_name}.iap"
