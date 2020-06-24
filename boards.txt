@@ -53,6 +53,8 @@ Lacuna-LS200.menu.region_flags.EU868=Europe 868
 Lacuna-LS200.menu.region_flags.EU868.build.region=R_EU868
 Lacuna-LS200.menu.region_flags.US915=US 915
 Lacuna-LS200.menu.region_flags.US915.build.region=R_US915
+Lacuna-LS200.menu.region_flags.AU915=AU 915
+Lacuna-LS200.menu.region_flags.AU915.build.region=R_AU915
 Lacuna-LS200.menu.region_flags.AS923=Asia AS923
 Lacuna-LS200.menu.region_flags.AS923.build.region=R_AS923
 Lacuna-LS200.menu.region_flags.IN865=India 865
@@ -63,8 +65,8 @@ Lacuna-LS200.menu.version_flags.V3.build.version=BOARD_LS200_V3
 Lacuna-LS200.menu.version_flags.V2=V2
 Lacuna-LS200.menu.version_flags.V2.build.version=BOARD_LS200_V2
 
-Lacuna-LS200.menu.dosfs.none.build.dosfs_sdcard=0
-Lacuna-LS200.menu.dosfs.none.build.dosfs_sflash=0
+Lacuna-LS200.build.dosfs_sdcard=0
+Lacuna-LS200.build.dosfs_sflash=0
 
 Lacuna-LS200.menu.speed.80=80 MHz
 Lacuna-LS200.menu.speed.80.build.f_cpu=80000000L
