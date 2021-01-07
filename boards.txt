@@ -40,8 +40,8 @@ Lacuna-LS200.build.variant_system_include="-I{runtime.platform.path}/system/CMSI
 
 Lacuna-LS200.menu.usb.cdc=Serial
 Lacuna-LS200.menu.usb.cdc.build.usb_type=USB_TYPE_CDC
-# Lacuna-LS200.menu.usb.cdc_msc=Serial + Mass Storage
-# Lacuna-LS200.menu.usb.cdc_msc.build.usb_type=USB_TYPE_CDC_MSC
+Lacuna-LS200.menu.usb.cdc_msc=Serial + Mass Storage
+Lacuna-LS200.menu.usb.cdc_msc.build.usb_type=USB_TYPE_CDC_MSC
 # Lacuna-LS200.menu.usb.cdc_hid=Serial + Keyboard + Mouse
 # Lacuna-LS200.menu.usb.cdc_hid.build.usb_type=USB_TYPE_CDC_HID
 # Lacuna-LS200.menu.usb.cdc_msc_hid=Serial + Mass Storage + Keyboard + Mouse
@@ -60,13 +60,17 @@ Lacuna-LS200.menu.region_flags.AS923.build.region=R_AS923
 Lacuna-LS200.menu.region_flags.IN865=India 865
 Lacuna-LS200.menu.region_flags.IN865.build.region=R_IN865
 
-Lacuna-LS200.menu.version_flags.V3=V3
-Lacuna-LS200.menu.version_flags.V3.build.version=BOARD_LS200_V3
-Lacuna-LS200.menu.version_flags.V2=V2
-Lacuna-LS200.menu.version_flags.V2.build.version=BOARD_LS200_V2
-
 Lacuna-LS200.build.dosfs_sdcard=0
 Lacuna-LS200.build.dosfs_sflash=0
+
+Lacuna-LS200.menu.version_flags.V3=V3
+Lacuna-LS200.menu.version_flags.V3.build.version=BOARD_LS200_V3
+Lacuna-LS200.menu.version_flags.V4=V4
+Lacuna-LS200.menu.version_flags.V4.build.version=BOARD_LS200_V4
+Lacuna-LS200.menu.version_flags.V4.build.dosfs_sdcard=0
+Lacuna-LS200.menu.version_flags.V4.build.dosfs_sflash=0
+Lacuna-LS200.menu.version_flags.V2=V2
+Lacuna-LS200.menu.version_flags.V2.build.version=BOARD_LS200_V2
 
 Lacuna-LS200.menu.speed.80=80 MHz
 Lacuna-LS200.menu.speed.80.build.f_cpu=80000000L

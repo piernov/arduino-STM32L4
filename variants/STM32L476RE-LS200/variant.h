@@ -121,6 +121,15 @@ static const uint8_t BUTTON = PIN_BUTTON;
 
 #define BOARD_LS200_V2 (0x02)
 #define BOARD_LS200_V3 (0x03)
+#define BOARD_LS200_V4 (0x04)
+
+#if BOARD_VERSION == BOARD_LS200_V2
+	#define LS200_V2
+#elif BOARD_VERSION == BOARD_LS200_V3
+	#define LS200_V3
+#elif BOARD_VERSION == BOARD_LS200_V4
+	#define LS200_V4
+#endif
 
 #if BOARD_VERSION == BOARD_LS200_V2
   #define BME280_WIRE Wire2
@@ -169,9 +178,17 @@ static const uint8_t BUTTON = PIN_BUTTON;
 
 #define E22_RXEN 1
 #define E22_BUSY 2
-#define E22_NSS 10
 #define E22_NRST 14
 #define E22_DIO1 39
+
+#if BOARD_VERSION == BOARD_LS200_V4
+	#define E22_NSS 19
+	#define SD_ENABLE 44
+	#define SD_SS 10
+	#define SDCARD_SS_PIN 10
+#else
+	#define E22_NSS 10
+#endif
 
 /*
  * Serial interfaces
