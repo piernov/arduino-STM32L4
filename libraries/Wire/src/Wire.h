@@ -104,6 +104,9 @@ private:
 
     static const uint32_t TWI_CLOCK = 100000;
 
+    static const int TIMEOUT = 10;
+    void waitI2CDone();
+
     friend class TwoWireEx;
 };
 

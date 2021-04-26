@@ -76,6 +76,18 @@ void TwoWire::end()
     stm32l4_i2c_disable(_i2c);
 }
 
+void TwoWire::waitI2CDone()
+{
+    int ts = millis();
+    while (!stm32l4_i2c_done(_i2c)) {
+        if (millis() > ts + TIMEOUT) {
+            NVIC_SystemReset();
+            return;
+        }
+        armv7m_core_yield();
+    }
+}
+
 uint8_t TwoWire::requestFrom(uint8_t address, size_t quantity, bool stopBit)
 {
     if (__get_IPSR() != 0) {
@@ -90,17 +102,13 @@ uint8_t TwoWire::requestFrom(uint8_t address, size_t quantity, bool stopBit)
 	quantity = BUFFER_LENGTH;
     }
 
-    while (!stm32l4_i2c_done(_i2c)) {
-	armv7m_core_yield();
-    }
+    waitI2CDone();
 
     if (!stm32l4_i2c_receive(_i2c, address, &_rx_data[0], quantity, (stopBit ? 0 : I2C_CONTROL_RESTART))) {
 	return 0;
     }    
 
-    while (!stm32l4_i2c_done(_i2c)) {
-	armv7m_core_yield();
-    }
+    waitI2CDone();
 
     if (stm32l4_i2c_status(_i2c)) {
 	return 0;
@@ -137,9 +145,7 @@ uint8_t TwoWire::endTransmission(bool stopBit)
 	return 4;
     }
 
-    while (!stm32l4_i2c_done(_i2c)) {
-	armv7m_core_yield();
-    }
+    waitI2CDone();
 
     if (!stm32l4_i2c_transmit(_i2c, _tx_address, &_tx_data[0], _tx_write, (stopBit ? 0 : I2C_CONTROL_RESTART))) {
 	_tx_active = false;
@@ -147,9 +153,7 @@ uint8_t TwoWire::endTransmission(bool stopBit)
 	return 4;
     }
 
-    while (!stm32l4_i2c_done(_i2c)) {
-	armv7m_core_yield();
-    }
+    waitI2CDone();
 
     status = stm32l4_i2c_status(_i2c);
 
@@ -236,9 +240,7 @@ void TwoWire::flush(void)
 	    stm32l4_i2c_poll(_i2c);
 	}
     } else {
-	while (!stm32l4_i2c_done(_i2c)) {
-	    armv7m_core_yield();
-	}
+	waitI2CDone();
     }
 }
 uint8_t TwoWire::transfer(uint8_t address, const uint8_t *txBuffer, size_t txSize, uint8_t *rxBuffer, size_t rxSize, bool stopBit)
@@ -257,9 +259,7 @@ uint8_t TwoWire::transfer(uint8_t address, const uint8_t *txBuffer, size_t txSiz
 	return 4;
     }
 
-    while (!stm32l4_i2c_done(_i2c)) {
-	armv7m_core_yield();
-    }
+    waitI2CDone();
 
     if (rxSize) {
 	if (txSize) {
@@ -274,9 +274,7 @@ uint8_t TwoWire::transfer(uint8_t address, const uint8_t *txBuffer, size_t txSiz
 	    return 4;
     }
 
-    while (!stm32l4_i2c_done(_i2c)) {
-	armv7m_core_yield();
-    }
+    waitI2CDone();
 
     status = stm32l4_i2c_status(_i2c);
 
